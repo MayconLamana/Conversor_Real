@@ -1,5 +1,5 @@
 async function fetchExchangeRate() {
-    const apiKey = 'SUA_CHAVE_KEY';
+    const apiKey = 'f59fe8fe';
     const url = `https://api.hgbrasil.com/finance/quotations?key=${apiKey}&format=json-cors&fields=USD`;
   
     const response = await fetch(url);
