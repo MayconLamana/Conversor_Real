@@ -11,6 +11,7 @@ async function convert() {
   const exchangeRate = await fetchExchangeRate();
   const real = dollar * exchangeRate;
   document.getElementById('real').value = real.toFixed(2);
+  console.log(real)
 }
 
 
