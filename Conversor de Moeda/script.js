@@ -1,5 +1,5 @@
 async function fetchExchangeRate() {
-  const url = 'https://api.hgbrasil.com/finance?key=760e6e5d'
+  const url = 'https://api.hgbrasil.com/finance?key=760e6e5d&format=json-cors&fields=USD'
   const response = await fetch(url, { mode: 'no-cors' });
   const data = await response.json();
   const exchangeRate = data.results.currencies.USD.buy;
