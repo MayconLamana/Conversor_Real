@@ -1,17 +1,18 @@
-async function fetchExchangeRate() {
-  const url = 'https://api.hgbrasil.com/finance?key=760e6e5d&format=json-cors&fields=USD'
-  const response = await fetch(url, { mode: 'no-cors' });
+
+//async function fetchExchangeRate() {
+//  const url = 'https://api.hgbrasil.com/finance?key=760e6e5d&format=json-cors&fields=USD'
+//  const response = await fetch(url, { mode: 'no-cors' });
 //  const data = await response.json(url);
-  const exchangeRate = data.results.currencies.USD.buy;
-  return exchangeRate;
-}
+//  const exchangeRate = data.results.currencies.USD.buy;
+ // return exchangeRate;
+//}
 
 async function convert() {
   const dollar = document.getElementById('dollar').value;
-  const exchangeRate = await fetchExchangeRate();
-  const real = dollar * exchangeRate;
+//  const exchangeRate = await fetchExchangeRate();
+  const real = dollar *5.06;
   document.getElementById('real').value = real.toFixed(2);
-  console.log(real)
+
 }
 
 
