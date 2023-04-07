@@ -1,8 +1,42 @@
-function convert() {
+async function fetchExchangeRate() {
+  const url = 'https://api.hgbrasil.com/finance?key=760e6e5d'
+  const response = await fetch(url, { mode: 'cors' });
+  const data = await response.json();
+  const exchangeRate = data.results.currencies.USD.buy;
+  return exchangeRate;
+}
+
+async function convert() {
   const dollar = document.getElementById('dollar').value;
-  const real = dollar * 5.50;
+  const exchangeRate = await fetchExchangeRate();
+  const real = dollar * exchangeRate;
   document.getElementById('real').value = real.toFixed(2);
 }
+
+
+
+//async function fetchExchangeRate() {
+//const url = 'https://api.hgbrasil.com/finance?key=760e6e5d'
+
+//  const response = await fetch(url);
+//  const data = await response.json();
+
+//  const exchangeRate = data.results.currencies.USD.buy;
+//  return exchangeRate;
+//}
+
+//function convert() {
+//  const dollar = document.getElementById('dollar').value;
+//  const real = dollar * exchangeRate;
+//  document.getElementById('real').value = real.toFixed(2);
+//}
+
+
+//function convert() {
+//  const dollar = document.getElementById('dollar').value;
+ // const real = dollar * 5.06;
+//  document.getElementById('real').value = real.toFixed(2);
+//}
 
   
   
