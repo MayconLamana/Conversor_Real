@@ -1,12 +1,4 @@
 
-//async function fetchExchangeRate() {
-//  const url = 'https://api.hgbrasil.com/finance?key=760e6e5d&format=json-cors&fields=USD'
-//  const response = await fetch(url, { mode: 'no-cors' });
-//  const data = await response.json(url);
-//  const exchangeRate = data.results.currencies.USD.buy;
- // return exchangeRate;
-//}
-
 async function convert() {
   const dollar = document.getElementById('dollar').value;
 //  const exchangeRate = await fetchExchangeRate();
@@ -14,6 +6,33 @@ async function convert() {
   document.getElementById('real').value = real.toFixed(2);
 
 }
+
+function convertE() {
+  const euro= document.getElementById('euro').value;
+  const real = euro * 5.51;
+  document.getElementById('realE').value = real.toFixed(2);
+}
+
+function convertB() {
+  const bitcoin= document.getElementById('bitcoin').value;
+  const real = bitcoin * 143198.26;
+  document.getElementById('realB').value = parseFloat (real.toFixed(5));
+}
+
+function convertA() {
+  const pesoA= document.getElementById('pesoA').value;
+  const real = pesoA * 0.024;
+  document.getElementById('realA').value = real.toFixed(3);
+}
+
+
+
+
+
+
+
+
+
 
 
 
